@@ -1,0 +1,22 @@
+{
+  "appName": "teste",
+  "transpileScripts": false,
+  "loadToGlobal": [],
+  "database": {
+    "driverClassName": "org.postgresql.Driver",
+    "urlConnection": "jdbc:postgresql://35.196.155.216:5432/gdg",
+    "userName": "gdg",
+    "password": "2017@tec"
+  },
+  "authentication": {
+    "notAuthenticatedUrls": [
+      "/",
+      "/app/public/auth/login",
+      "/app/public/test/hello",
+      "/app/public/test/helloPost"
+    ]
+  },
+  "jwt": {
+    "jwsKey": "abcdefgh12345678"
+  }
+}
