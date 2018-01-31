@@ -6,17 +6,15 @@ let authPath = new java.io.File(rootPath, 'authorization.json').getAbsolutePath(
 let authorizarions = fs.readJson(authPath)
 
 setupMiddlewares(router)
+setupRoutes(router)
 
 server.createServer(5000, router)
 
-
-
-function setupMiddlewares (router) {
+function setupMiddlewares(router) {
   let auth = require('authentication')
 
-  router.addRoute('/app/prod/getAll', 'app/secure/estoque/produtos/getAll')
+  router.addMiddleware(auth)
 
-  router.addMiddleware(auth.validateAccess)
   router.addMiddleware(function (params, request, response) {
     let requiredRole = authorizarions[request.requestURI]
 
@@ -31,4 +29,8 @@ function setupMiddlewares (router) {
 
     return true
   })
+}
+
+function setupRoutes(router) {
+  router.addRoute('/app/prod/getAll', 'app/secure/estoque/produtos/getAll')
 }

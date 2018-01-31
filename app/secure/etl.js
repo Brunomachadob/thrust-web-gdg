@@ -13,6 +13,8 @@ function run(params, request, response) {
     .take_fields_from_header_row()
     .for_each(printCPF)
 
+  print('rows:', count)
+
   response.json({ rows: count })
 }
 

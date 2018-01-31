@@ -5,8 +5,7 @@
     "bitcodes": [
       "thrust-bitcodes/http",
       "thrust-bitcodes/filesystem",
-      "database",
-      "authentication",
+      "thrust-bitcodes/authentication",
       "thrust-bitcodes/etl",
       "thrust-bitcodes/database"
     ],
